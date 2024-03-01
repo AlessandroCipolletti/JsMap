@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import Map from './components/Map'
+import MapImageSrc from './assets/map.png'
 
 function App() {
   return (
@@ -9,7 +11,7 @@ function App() {
       </Header>
       <MainWrapper>
         <MapWrapper>
-
+          <Map mapBg={MapImageSrc} />
         </MapWrapper>
         <Sidebar>
 
@@ -33,7 +35,9 @@ const MainWrapper = styled.main`
 const MapWrapper = styled.div`
   width: calc(100% - 320px);
   min-height: 80vh;
-  background-color: yellow;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
 `
 const Sidebar = styled.aside`
   width: 300px;
