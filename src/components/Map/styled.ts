@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import emptyBg from './assets/empty.webp'
 
 export const Wrapper = styled.div<{
-  bgUrl?: string
+  $bgUrl?: string
 }>`
   position: relative;
   width: 100%;
@@ -11,8 +11,8 @@ export const Wrapper = styled.div<{
   align-items: center;
   justify-content: center;
 
-  ${({ bgUrl }) => bgUrl && `
-    background-image: url(${bgUrl});
+  ${({ $bgUrl }) => $bgUrl && `
+    background-image: url(${$bgUrl});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
