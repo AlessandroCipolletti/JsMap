@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import Map from './components/Map'
 import MapImageSrc from './assets/map.png'
+import generatePins from './utils/generatePins'
 
 function App() {
+  const pins = useMemo(() => generatePins(40), [])
+
   return (
     <PageWrapper>
       <Header>
@@ -11,7 +14,7 @@ function App() {
       </Header>
       <MainWrapper>
         <MapWrapper>
-          <Map mapBg={MapImageSrc} />
+          <Map mapBg={MapImageSrc} pins={pins} />
         </MapWrapper>
         <Sidebar>
 

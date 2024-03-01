@@ -1,12 +1,20 @@
 import React, { FC } from 'react'
-import { Wrapper, MapImage, EmptyBg, BackdropFilter, MapWrapper } from './styled'
-import Pin, { PinProps } from './Pin'
+import { Wrapper, MapImage, EmptyBg, BackdropFilter, MapWrapper, Pin } from './styled'
 
-export type Pin = PinProps
+export type Pin = {
+  id: string
+  label: string
+  x: number
+  y: number
+  size: number
+  color: string
+  disabled?: boolean
+  onClick?: () => void
+}
 
 interface Props {
   mapBg?: string
-  pins?: PinProps[]
+  pins?: Pin[]
   dragPins?: boolean
 }
 
@@ -30,7 +38,15 @@ const Map: FC<Props> = ({
 
       <MapWrapper>
         <MapImage src={mapBg} />
-        {pins?.map(pin => <Pin key={pin.id} {...pin} />)}
+        {pins?.map((pin, index) => (
+          <Pin
+            key={pin.id}
+            index={index}
+            {...pin}
+          >
+            {pin.label}
+          </Pin>
+        ))}
       </MapWrapper>
     </Wrapper>
   )
