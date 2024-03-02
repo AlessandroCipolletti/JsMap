@@ -36,6 +36,7 @@ module.exports = {
       'error',
       2
     ],
+    '@typescript-eslint/no-empty-function': 'off',
     'linebreak-style': [
       'error',
       'unix'
