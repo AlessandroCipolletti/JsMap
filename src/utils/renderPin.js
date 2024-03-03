@@ -35,7 +35,13 @@ const getPinStyle = (pin, index) => {
 }
 
 const renderPin = (pin, index) => `
-  <div class="${getPinClass(pin)}" style="${getPinStyle(pin, index)}">${pin.label}</div>
+  <div
+    id="${pin.id}"
+    class="${getPinClass(pin)}"
+    style="${getPinStyle(pin, index)}"
+  >
+    ${pin.label}
+  </div>
 `
 
 export default renderPin

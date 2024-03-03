@@ -19,6 +19,12 @@ const init = () => {
       </section>
     </main>
   `
+
+  pins.forEach((pin, index) => {
+    if (pin.onClick) {
+      document.getElementById(pin.id).addEventListener('click', pin.onClick)
+    }
+  })
 }
 
 document.onreadystatechange = async() => {
