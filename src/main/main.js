@@ -2,6 +2,7 @@ import './main.css'
 import mapBg from '../assets/map.png'
 import generatePinsData from '../utils/generatePinsData'
 import renderPin from '../utils/renderPin'
+import Map from '../modules/Map'
 
 const init = () => {
   const pins = generatePinsData(30)
@@ -20,11 +21,13 @@ const init = () => {
     </main>
   `
 
-  pins.forEach((pin, index) => {
+  pins.forEach(pin => {
     if (pin.onClick) {
       document.getElementById(pin.id).addEventListener('click', pin.onClick)
     }
   })
+
+  new Map(document.getElementById('map'))
 }
 
 document.onreadystatechange = async() => {
