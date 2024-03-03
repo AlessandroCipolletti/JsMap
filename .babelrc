@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    [
+      "@babel/transform-runtime"
+    ],
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "src": "./src",
+          "main": "./src/main",
+          "static": "./src/static",
+          "utils": "./src/utils",
+          "modules": "./src/modules",
+          "components": "./src/components",
+          "pages": "./src/pages"
+        }
+      }
+    ]
+  ]
+}
