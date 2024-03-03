@@ -1,0 +1,116 @@
+* {
+  /* contain: content; */
+  /* contain: strict; */
+
+  margin: 0rem;
+  padding: 0rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.05rem;
+  font-size: 1.5rem;
+  opacity: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+          tap-highlight-color: transparent;
+  -webkit-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+          touch-callout: none;
+  -webkit-text-size-adjust: none;
+          text-size-adjust: none;
+  -webkit-user-drag: none;
+          user-drag: none;
+}
+input {
+  -webkit-user-select: auto;
+          user-select: auto;
+}
+html, body {
+  position: fixed;
+  width: var(--100vw);
+  height: var(--100vh);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+main {
+  padding: 10px;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+#main-wrapper {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#backdrop-filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  backdrop-filter: blur(30px);
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+#map {
+  position: relative;
+  z-index: 10;
+  user-select: none;
+}
+
+#map-img {
+  max-width: 100%;
+  user-select: none;
+  max-height: 100%;
+}
+
+.pin {
+  position: absolute;
+  user-select: none;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0px);
+  color: white;
+  text-align: center;
+  border: solid 2px white;
+  opacity: 0.8;
+  font-size: 0.5em;
+}
+.pin.clickable {
+  cursor: pointer;
+}
+.pin.disabled,
+.pin.disabled.clickable {
+  cursor: not-allowed;
+}
+.pin.disabled {
+  opacity: 0.4;
+}
+.pin:hover {
+  opacity: 1;
+  z-index: 10000 !important;
+}
+.pin.disabled:hover {
+  opacity: 0.4;
+}

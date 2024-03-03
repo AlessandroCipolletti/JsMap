@@ -1,14 +1,9 @@
 import { v4 as uuid } from 'uuid'
 import getRandomNumber from 'js-math-and-ui-utils/mathUtils/getRandomNumber'
-import type { Pin } from '../components/Map'
-
-type GenerateOnePin = (id: string, index: number, label: string, disabled?: boolean) => Pin
-
 
 const colors = ['red', 'blue', 'green']
 
-
-const generateOnePin: GenerateOnePin = (id, index, label, disabled = false) => {
+const generateOnePin = (id, index, label, disabled = false) => {
   return {
     id,
     label,
@@ -25,10 +20,10 @@ const generateOnePin: GenerateOnePin = (id, index, label, disabled = false) => {
 
 const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-const generatePins = (count: number): Pin[] => {
+const generatePinsData = (count) => {
   return Array.from({ length: count }, (_, index) => {
     return generateOnePin(uuid(), index, labels[index % labels.length], index < count / 4)
   })
 }
 
-export default generatePins
+export default generatePinsData
