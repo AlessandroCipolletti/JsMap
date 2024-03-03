@@ -2,8 +2,8 @@ import './main.css'
 import mapBg from '../assets/map.png'
 import generatePinsData from '../utils/generatePinsData'
 import renderPin from '../utils/renderPin'
-import  getPointerEventForThisDevice from '../utils/getPointerEventForThisDevice'
-import Map from '../modules/Map'
+import getPointerEventForThisDevice from '../utils/getPointerEventForThisDevice'
+import Map from '../modules/Map/Map'
 
 const init = () => {
   const pins = generatePinsData(30)

@@ -1,0 +1,17 @@
+.map-origin-point,
+.map-center-point {
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  position: absolute;
+  z-index: -1;
+}
+.map-origin-point {
+  top: 0rem;
+  left: 0rem;
+}
+.map-center-point {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0px);
+}

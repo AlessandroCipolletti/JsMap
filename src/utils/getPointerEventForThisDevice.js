@@ -1,4 +1,4 @@
-export const getPointerEventForThisDevice = () => {
+const getPointerEventForThisDevice = () => {
   if ('ontouchstart' in window) {
     return {
       eventStart: 'touchstart',
@@ -15,3 +15,5 @@ export const getPointerEventForThisDevice = () => {
     }
   }
 }
+
+export default getPointerEventForThisDevice
