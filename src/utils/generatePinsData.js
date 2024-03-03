@@ -12,7 +12,9 @@ const generateOnePin = (id, index, label, disabled = false) => {
     size: 30,
     color: colors[index % colors.length],
     disabled,
-    onClick: () => {
+    onClick: (e) => {
+      e.stopPropagation()
+      e.preventDefault()
       alert(`Pin ${label} clicked`)
     },
   }
